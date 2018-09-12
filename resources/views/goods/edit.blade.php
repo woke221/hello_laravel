@@ -21,18 +21,19 @@
         </ul>
     </div>
 @endif
-{{ Form::open(['url'=>'goods', 'method'=>'post', 'files'=>true]) }}
+{{ Form::open(['url'=>'goods/' . $model->id, 'method'=>'post', 'files'=>true]) }}
+<input type="hidden" name="_method" value="put" />
 <div>
     <label for="cat_id">商品分类ID</label>
-    <input type="text" name="cat_id" id="cat_id">
+    <input type="text" name="cat_id" id="cat_id" value="{{$model->cat_id}}">
 </div>
 <div>
     <label for="goods_sn">商品货号</label>
-    <input type="text" name="goods_sn" id="goods_sn">
+    <input type="text" name="goods_sn" id="goods_sn" value="{{$model->goods_sn}}">
 </div>
 <div>
     <label for="goods_name">商品名称</label>
-    <input type="text" name="goods_name" id="goods_name">
+    <input type="text" name="goods_name" id="goods_name" value="{{$model->goods_name}}">
 </div>
 <div>
     <input type="submit" name="提交">
